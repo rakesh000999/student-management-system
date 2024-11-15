@@ -24,8 +24,9 @@ $selectSqlResult = mysqli_query($conn, $selectSql);
                     <td scope="row"><?php echo ++$i; ?></td>
                     <td><?php echo $row['name']; ?></td>
                     <td scope="row">
-                        <a href="edit-student.php?id=<?php echo $row['s_id']; ?>">Edit</a>
-                        <a href="#">Delete</a>
+                        <a href="edit-student.php?id=<?php echo $row['s_id']; ?>" class="btn btn-primary">Edit</a>
+                        <a href="delete-student.php?id=<?php echo $row['s_id']; ?>"
+                            onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 <?php
